@@ -12,7 +12,7 @@
 
     <!-- 自动扫描 -->
     <context:component-scan base-package="com.zl.ssm.service"/>
-    <context:component-scan base-package="com.zl.ssm.dao"/>
+    <context:component-scan base-package="com.zl.ssm.mapper"/>
 
     <!-- 引入文件属性 -->
     <!--<context:property-placeholder location="classpath:config/jdbc.properties" />-->
@@ -83,8 +83,8 @@
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zl.ssm.dao"/>
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <property name="basePackage" value="com.zl.ssm.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
     <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
